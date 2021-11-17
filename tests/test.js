@@ -93,3 +93,5 @@ searchTextOnGoogle()
 // }
 
 // example()
+
+// added .gitignore for node_modules
