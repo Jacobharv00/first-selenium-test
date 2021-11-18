@@ -1,5 +1,7 @@
 const { Builder, Key, By } = require( 'selenium-webdriver' )
 
+
+
 // username and access key
 const USERNAME = 'jacobharv00'
 const KEY = 'AtKPu6yJADdqqzoZDuGs3X6lcoutQhnB9oZDy50DMJJyeP0UVB'
@@ -25,18 +27,18 @@ async function searchTextOnGoogle () {
   const gridUrl = 'https://' + USERNAME + ':' + KEY + '@' + GRID_HOST
 
   // Build and instantiate the browser on the platform, build, launch properly
-  let driver = await new Builder()
+  const driver = await new Builder()
     .usingServer( gridUrl )
     .withCapabilities( capabilities )
     .build()
 
-  let searchString = 'Angry Cats'
+  const searchString = 'Angry Cats'
 
   await driver.get( 'https://google.com' )
 
   await driver.findElement( By.name( "q" ) ).sendKeys( searchString, Key.RETURN )
 
-  var title = await driver.getTitle()
+  const title = await driver.getTitle()
   console.log( 'Title is:', title )
 
   await driver.quit()
